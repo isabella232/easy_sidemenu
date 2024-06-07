@@ -276,21 +276,19 @@ class _SideMenuState extends State<SideMenu> {
             decoration: _decoration(widget.style),
             child: Stack(
               children: [
-                SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (widget.global.style.showHamburger) hamburgerIcon,
-                      if (widget.global.style.displayMode ==
-                              SideMenuDisplayMode.compact &&
-                          showToggle)
-                        const SizedBox(
-                          height: 42,
-                        ),
-                      if (widget.title != null) widget.title!,
-                      ...widget.sidemenuitems.items,
-                    ],
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (widget.global.style.showHamburger) hamburgerIcon,
+                    if (widget.global.style.displayMode ==
+                            SideMenuDisplayMode.compact &&
+                        showToggle)
+                      const SizedBox(
+                        height: 42,
+                      ),
+                    if (widget.title != null) widget.title!,
+                    ...widget.sidemenuitems.items,
+                  ],
                 ),
                 if ((widget.footer != null &&
                         widget.global.displayModeState.value !=
